@@ -1,0 +1,10 @@
+services:
+  demo:
+    build: .
+    env_file:
+      - .env
+    ports:
+      # Bind to loopback only — this demo has no auth and isn't meant
+      # to be reachable from your network, let alone the internet.
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped

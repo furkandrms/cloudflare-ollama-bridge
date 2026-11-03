@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>cloudflare-ollama-bridge · demo</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🌉 cloudflare-ollama-bridge</h1>
+      <p class="sub">Chat with a model running on a free Colab GPU, tunneled through Cloudflare.</p>
+    </header>
+
+    <section class="config">
+      <label>
+        Tunnel URL
+        <input id="server-url" type="text" placeholder="https://xxxx-xxxx.trycloudflare.com" value="{{ default_server_url }}" />
+      </label>
+      <label class="model-label">
+        Model
+        <input id="model" type="text" placeholder="qwen3:8b" value="{{ default_model }}" />
+      </label>
+    </section>
+
+    <section id="chat" class="chat"></section>
+
+    <form id="chat-form" class="composer">
+      <textarea id="message" placeholder="Ask something…" rows="2"></textarea>
+      <button type="submit" id="send-btn">Send</button>
+    </form>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
