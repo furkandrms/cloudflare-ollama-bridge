@@ -9,9 +9,19 @@
 <body>
   <div class="app">
     <header>
-      <h1>🌉 cloudflare-ollama-bridge</h1>
+      <div class="header-row">
+        <h1>🌉 cloudflare-ollama-bridge</h1>
+        <a class="colab-link" href="{{ colab_url }}" target="_blank" rel="noopener">Open notebook in Colab ↗</a>
+      </div>
       <p class="sub">Chat with a model running on a free Colab GPU, tunneled through Cloudflare.</p>
     </header>
+
+    {% if not default_server_url %}
+    <a class="colab-banner" href="{{ colab_url }}" target="_blank" rel="noopener">
+      <span class="colab-banner-title">No tunnel connected yet</span>
+      <span class="colab-banner-body">Click to open the Colab notebook, run its cells, then paste the printed URL below ↓</span>
+    </a>
+    {% endif %}
 
     <section class="config">
       <label>

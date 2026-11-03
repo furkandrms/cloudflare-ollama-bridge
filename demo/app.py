@@ -30,6 +30,12 @@ load_dotenv()
 
 APP_DIR = os.path.dirname(__file__)
 
+COLAB_NOTEBOOK_URL = (
+    "https://colab.research.google.com/github/"
+    "furkandrms/cloudflare-ollama-bridge/blob/main/"
+    "notebooks/colab_ollama_tunnel.ipynb"
+)
+
 app = FastAPI(title="cloudflare-ollama-bridge demo")
 app.mount("/static", StaticFiles(directory=os.path.join(APP_DIR, "static")), name="static")
 templates = Jinja2Templates(directory=os.path.join(APP_DIR, "templates"))
@@ -85,6 +91,7 @@ async def index(request: Request):
         {
             "default_server_url": os.environ.get("MODEL_SERVER_URL", ""),
             "default_model": os.environ.get("MODEL_NAME", "qwen3:8b"),
+            "colab_url": COLAB_NOTEBOOK_URL,
         },
     )
 

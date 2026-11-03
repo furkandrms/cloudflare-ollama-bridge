@@ -28,6 +28,14 @@ body {
   flex-direction: column;
 }
 
+.header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 header h1 {
   font-size: 22px;
   margin: 0 0 4px;
@@ -37,6 +45,44 @@ header .sub {
   color: var(--muted);
   margin: 0 0 20px;
   font-size: 14px;
+}
+
+.colab-link {
+  font-size: 12px;
+  color: var(--accent-2);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.colab-link:hover {
+  text-decoration: underline;
+}
+
+.colab-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  background: linear-gradient(135deg, rgba(246, 130, 31, 0.12), rgba(75, 159, 255, 0.1));
+  border: 1px solid rgba(246, 130, 31, 0.35);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.colab-banner:hover {
+  border-color: var(--accent);
+}
+
+.colab-banner-title {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.colab-banner-body {
+  color: var(--text);
+  font-size: 13px;
 }
 
 .config {
